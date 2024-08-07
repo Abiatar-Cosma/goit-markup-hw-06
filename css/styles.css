@@ -9,6 +9,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 body {
@@ -48,10 +49,36 @@ a {
   cursor: pointer;
 }
 
-.container {
+/* .container {
   width: 1158px;
   margin: 0 auto;
   padding: 0 15px;
+} */
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  outline: 3px solid yellow;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    width: 1158px;
+    padding: 0 15px;
+  }
 }
 
 .header {
@@ -74,9 +101,15 @@ a {
 }
 
 .header-nav-list {
-  display: flex;
-  gap: 40px;
-  padding: 24px 0;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header-nav-list {
+    display: flex;
+    gap: 40px;
+    padding: 24px 0;
+  }
 }
 
 .header-logo {
@@ -120,13 +153,13 @@ a {
 }
 
 .header-link.active::after {
-  display: block; /* Arată bara doar pentru link-urile active */
+  display: block;
 }
 .header-link:not(.active) {
   color: #2e2f42;
 }
 .header-link:not(.active)::after {
-  display: none; /* Ascunde bara pentru link-urile care nu sunt active */
+  display: none;
 }
 
 .address {
@@ -137,8 +170,20 @@ a {
 }
 
 .address-list {
-  display: flex;
-  gap: 40px;
+  display: none;
+}
+
+@media (min-width: 1158px) {
+  .address-list {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1157px) {
+  .address-list {
+    display: block;
+  }
 }
 
 .address-link {
@@ -215,10 +260,6 @@ a {
   background-color: #404bbf;
 }
 
-.feature-section {
-  padding: 120px 0;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -233,18 +274,24 @@ a {
   overflow: hidden;
 }
 
+.feature-section {
+  padding: 120px 0;
+}
+
 .feature-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  /* gap: 24px; */
+  gap: 72px;
 }
 
 .feature-element {
-  width: calc((100% - 72px) / 4);
+  width: 100%;
 }
 
 .feature-icon-container {
   width: 264px;
-  height: 112px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -274,6 +321,22 @@ a {
   color: var(--primary-color-slate);
 }
 
+@media (min-width: 769px) {
+  .feature-list {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .feature-element {
+    width: calc((100% - 72px) / 4);
+  }
+
+  .feature-icon-container {
+    width: 264px;
+    height: 112px;
+  }
+}
+
 .team-section {
   background-color: #f4f4fd;
   padding: 120px 0;
@@ -292,7 +355,16 @@ a {
 }
 .team-card-list {
   display: flex;
+  flex-direction: column;
   gap: 24px;
+}
+
+@media (min-width: 1158px) {
+  .team-card-list {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
 }
 
 .team-card {
@@ -394,8 +466,20 @@ a {
 }
 
 .portfolio-element {
-  width: calc((100% - 48px) / 3);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 1158px) {
+  .portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 48px;
+  }
+  .portfolio-element {
+    width: calc((100% - 48px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .portfolio-element:hover {
@@ -505,11 +589,20 @@ a {
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
 }
 
-.container-logo-p {
-  margin-right: 120px;
+@media (min-width: 1158px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .container-logo-p {
+    margin-right: 120px;
+  }
 }
 
 .subscribe-paragraph {
@@ -527,10 +620,17 @@ a {
 
 .subscribe-form {
   display: flex;
+  flex-direction: column;
   gap: 24px;
-  /* !!! not sure !!! */
 }
 
+@media (min-width: 1158px) {
+  .subscribe-form {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
 .email-input {
   width: 264px;
   height: 40px;
