@@ -18,48 +18,95 @@
 
 <body>
 
+    <!-- Header Container -->
     <header class="header">
 
         <div class="header-container container">
 
-            <nav class="header-nav">
+            <!-- Header Logo -->
+            <a class="header-logo" href="./index.html">Web<span style="color: #2e2f42;">Studio</span></a>
 
-                <a class="header-logo" href="./index.html">Web<span style="color: #2e2f42;">Studio</span></a>
-                <ul class="header-nav-list">
-                    <li class="menu-element">
-                        <a class="header-link active" href="./index.html">Studio</a>
+            <!-- Burger Menue -->
+            <div class="menu" data-menu>
+                <button class="menu-close-button" type="button" data-close-menu>
+                    <svg class="menu-close-button-icon" width="24" height="24">
+                        <use class="icon-close" href="./images/icons.svg#icon-close-black"></use>
+                    </svg>
+                </button>
+
+                <!-- Header Navigation -->
+                <nav class="header-nav">
+                    <ul class="header-nav-list">
+                        <li class="menu-element">
+                            <a class="header-link current" href="./index.html">Studio</a>
+                        </li>
+                        <li class="menu-element">
+                            <a class="header-link" href="">Portfolio</a>
+                        </li>
+                        <li class="menu-element">
+                            <a class="header-link" href="">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Contacts Info -->
+                <address class="address">
+
+                    <ul class="address-list">
+                        <li class="header-contact-item">
+                            <a class="address-link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+                        </li>
+                        <li class="header-contact-item">
+                            <a class="address-link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+                        </li>
+                    </ul>
+
+                </address>
+
+                <!-- Social Media Link -->
+                <ul class="social-icons">
+                    <li class="social-icon">
+                        <a href="" class="link-icon">
+                            <svg class="icon" width="16" height="16">
+                                <use href="./images/icons.svg#icon-instagram"></use>
+                            </svg>
+                        </a>
                     </li>
-                    <li class="menu-element">
-                        <a class="header-link" href="">Portfolio</a>
+                    <li class="social-icon">
+                        <a href="" class="link-icon">
+                            <svg class="icon" width="16" height="16">
+                                <use href="./images/icons.svg#icon-twitter"></use>
+                            </svg>
+                        </a>
                     </li>
-                    <li class="menu-element">
-                        <a class="header-link" href="">Contacts</a>
+                    <li class="social-icon">
+                        <a href="" class="link-icon">
+                            <svg class="icon" width="16" height="16">
+                                <use href="./images/icons.svg#icon-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social-icon">
+                        <a href="" class="link-icon">
+                            <svg class="icon" width="16" height="16">
+                                <use href="./images/icons.svg#icon-linkedin"></use>
+                            </svg>
+                        </a>
                     </li>
                 </ul>
-
-            </nav>
-
-            <address class="address">
-
-                <ul class="address-list">
-                    <li class="header-contact-item">
-                        <a href="mailto:info@devstudio.com" class="address-link">info@devstudio.com</a>
-                    </li>
-                    <li class="header-contact-item">
-                        <a href="tel:+110001111111" class="address-link">+11 (000) 111-11-11</a>
-                    </li>
-                </ul>
-
-            </address>
-
+            </div>
+            <!-- Burger menu -->
+            <button class="open-menu-button" type="button" data-open-menu>
+                <svg class="open-menu-button-icon" width="24" height="24">
+                    <use class="menu-button-icon" href="./images/icons.svg#icon-heroicons-solid-menu"></use>
+                </svg>
+            </button>
         </div>
-
     </header>
-
+    <!-- Main Container -->
     <main>
 
-
-        <section class="hero-section">
+        <section class="hero-section section">
 
             <div class="container">
                 <h1 class="hero-title">Effective Solutions for Your Business</h1>
@@ -70,7 +117,7 @@
 
 
 
-        <section class="feature-section">
+        <section class="feature-section section">
 
             <div class="container">
 
@@ -122,7 +169,7 @@
 
         </section>
 
-        <section class="team-section">
+        <section class="team-section section">
 
             <div class="container">
 
@@ -283,7 +330,7 @@
 
 
 
-        <section class="portfolio-section">
+        <section class="portfolio-section section">
 
             <div class="container">
 
@@ -445,9 +492,9 @@
 
     </footer>
 
-    <div class="modal-backdrop">
+    <div class="modal-backdrop" data-backdrop>
         <div class="modal-window">
-            <button class="modal-close-button" type="button">
+            <button class="modal-close-button" type="button" data-close-modal>
                 <svg class="close-button-icon" width="8" height="8">
                     <use href="./images/icons.svg#icon-modal-close"></use>
                 </svg>
@@ -502,7 +549,7 @@
         </div>
     </div>
 
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
 </body>
 
 </html>
