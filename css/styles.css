@@ -57,30 +57,17 @@ a {
   /* outline: 3px solid yellow; */
 }
 
+.section {
+  padding: 96px 0;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
   }
 }
 
-@media screen and (min-width: 1158px) {
-  .container {
-    width: 1158px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-}
-
-.section {
-  padding: 96px 0;
-}
-
-@media screen and (min-width: 1158px) {
-  .section {
-    padding: 120px 0;
-  }
-}
-
+/* ============ -------- Header -------- =========== */
 .header {
   background: #ffffff;
   border-bottom: 1px solid #e7e9fc;
@@ -329,6 +316,61 @@ a {
   }
 }
 
+@media (min-width: 1158px) {
+  .address-list {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .header-contact-item + .header-contact-item {
+    margin-top: 0;
+  }
+  .address-link {
+    color: var(--primary-color-slate);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    padding-block: 24px;
+  }
+  .header-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .header-link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    height: 4px;
+    background-color: #404bbf;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+  }
+
+  .header-link.active::after {
+    display: block; /* Arată bara doar pentru link-urile active */
+  }
+  .header-link:not(.current) {
+    color: #2e2f42;
+  }
+  .header-link:not(.current)::after {
+    display: none; /* Ascunde bara pentru link-urile care nu sunt active */
+  }
+}
+
 /* =============== -------HERO Section --------- ============================ */
 
 .hero-section {
@@ -383,7 +425,7 @@ a {
   background-color: #404bbf;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1157px) {
   .hero-section {
     max-width: 768px;
     padding: 112px 0;
@@ -401,9 +443,21 @@ a {
 @media (min-width: 1158px) {
   .hero-section {
     max-width: 1440px;
+    height: 600px;
     background-color: var(--secondary-color-navy-blue);
     padding: 188px 0;
-    /* adauga imagine tableta !!!!!!!!!!!!!!!!!!!!!!!!!! */
+    /* adauga imagine desktop !!!!!!!!!!!!!!!!!!!!!!!!!! */
+  }
+  .hero-title {
+    font-family: var(--font-family);
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #ffffff;
+    max-width: 496px;
+    margin: 0 auto 48px;
   }
 }
 
@@ -477,6 +531,10 @@ a {
 }
 
 @media (min-width: 1158px) {
+  .feature-container {
+    width: 1128px;
+  }
+
   .feature-list {
     display: flex;
     gap: 24px;
@@ -626,13 +684,9 @@ a {
 
 @media (min-width: 1158px) {
   .team-card-list {
-    display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
     gap: 24px;
-  }
-
-  .team-card {
-    width: calc((100% - 72px) / 4);
   }
 }
 
@@ -740,13 +794,6 @@ a {
     margin-left: auto;
     margin-right: auto;
   }
-  .portfolio-element {
-    margin-bottom: 72px;
-  }
-
-  .portfolio-element:nth-last-child(-n + 2) {
-    margin-bottom: 0;
-  }
 }
 
 @media (min-width: 1158px) {
@@ -766,6 +813,14 @@ a {
   .portfolio-element {
     width: calc((100% - 48px) / 3);
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media (min-width: 1158px) {
+  .container {
+    width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
 }
 
@@ -860,18 +915,6 @@ a {
   fill: #f4f4fd;
 }
 
-@media (min-width: 1158px) {
-  .footer-container {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-  }
-
-  .container-logo-p {
-    margin-right: 120px;
-  }
-}
-
 .subscribe-paragraph {
   margin-bottom: 16px;
   font-weight: 500;
@@ -888,13 +931,6 @@ a {
   gap: 24px;
 }
 
-@media (min-width: 1158px) {
-  .subscribe-form {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-  }
-}
 .email-input {
   width: 264px;
   height: 40px;
@@ -937,7 +973,7 @@ a {
   fill: rgba(255, 255, 255, 1);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1157px) {
   .footer {
     margin: 0;
     padding: 96px 0;
@@ -1199,4 +1235,33 @@ a {
   border: none;
   border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 1158px) {
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+  }
+
+  .container-logo-p {
+    display: flex;
+    margin: 0 auto;
+    margin-right: 120px;
+  }
+
+  .subscribe-form {
+    margin-left: 80px;
+  }
+  .footer-social-container {
+    margin: 0 auto;
+  }
 }
