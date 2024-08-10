@@ -374,7 +374,7 @@ a {
 /* =============== -------HERO Section --------- ============================ */
 
 .hero-section {
-  max-width: 320px;
+  /* max-width: 320px; */
   margin: 0 auto;
   padding: 72 0;
   background-image: linear-gradient(
