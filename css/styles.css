@@ -830,6 +830,10 @@ a {
   background-color: var(--secondary-color-navy-blue);
 }
 
+.footer-logo-container {
+  text-align: center;
+}
+
 .logo-footer {
   font-family: var(--second-font-family);
   font-size: 18px;
@@ -850,6 +854,7 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-top: 17.5px;
+  text-align: left;
 }
 
 .footer-social-container {
@@ -967,6 +972,10 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     gap: 72px 24px;
+  }
+
+  .footer-logo-container {
+    text-align: left;
   }
 
   .flex-element {
