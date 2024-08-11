@@ -156,6 +156,7 @@ a {
 
 .header-link {
   font-family: var(--font-family);
+  color: var(--secondary-color-navy-blue);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
