@@ -1103,7 +1103,7 @@ a {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -50%);
   min-width: 288px;
   height: 623px;
   background: #fcfcfc;
@@ -1306,7 +1306,7 @@ a {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -50%);
     width: 408px;
     height: 584px;
     background: #fcfcfc;
